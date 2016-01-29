@@ -10,14 +10,16 @@
         <div>
             <billingmessage />
         </div>
-        <div ng-show="billaddressform || (billaddresses.length == 0 && user.Permissions.contains('CreateBillToAddress'))">
+        <!--<div ng-show="billaddressform || (billaddresses.length == 0 && user.Permissions.contains('CreateBillToAddress'))">-->
+        <div ng-hide="billaddressform == false || (user.Permissions.contains('CreateBillToAddress'))" ng-show="billaddressform == true">
             <addressinput address='billaddress' user='user'></addressinput>
         </div>
-        <div ng-hide="billaddressform || (billaddresses.length == 0 && user.Permissions.contains('CreateBillToAddress'))">
+        <!--<div ng-hide="billaddressform || (billaddresses.length == 0 && user.Permissions.contains('CreateBillToAddress'))">-->
+        <div ng-show="billaddressform == false || (user.Permissions.contains('CreateBillToAddress'))" ng-hide="billaddressform == true">
             <form name="cart_billing" novalidate="">
                 <div>
                     <paymentselector></paymentselector>
-                    <div class="view-form-icon" ng-show="billaddresses.length > 0">
+                    <!--<div class="view-form-icon" ng-show="billaddresses.length > 0">
                         <div ng-class="{'view-form-select': !currentOrder.BillAddressID, '': currentOrder.BillAddressID }">
                             <label class="required">{{('Billing' | r) + ' ' + ('Address' | r) | xlat}}</label>
                             <select class="form-control" ng-show="billaddresses" name="billingAddress"
@@ -26,7 +28,8 @@
                             </select>
                             <i class="fa fa-map-marker"></i>
                         </div>
-                    </div>
+                    </div>-->
+                    <largebilladdresssearch></largebilladdresssearch>
                     <div class="order-location" ng-show="BillAddress">
                         <p><strong><small>{{('Billing' | r) + ' ' + ('Location' | r) | xlat}}</small></strong></p>
                         <p ng-show="BillAddress.AddressName"><small>{{BillAddress.AddressName}}</small></p>

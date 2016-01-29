@@ -1,4 +1,5 @@
-#### SE Demos - DemoTemplate1015  / 18.6.2 CT Release and 1.1.3 SPA Release  (1214) - Notes Last Updated: 12/14/15
+#### SE Demos - DemoTemplate1015  / 18.6.2 CT Release and 1.1.3 SPA Release  (1214) 
+Last Updated: 12/14/15
 ======== 
 
 

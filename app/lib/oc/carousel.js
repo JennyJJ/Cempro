@@ -1,3 +1,4 @@
+/*changing the custom user field prefix to be specific to the buyer - line 48*/
 angular.module('OrderCloud-Carousel', ['ngAnimate']);
 
 angular.module('OrderCloud-Carousel')
@@ -44,8 +45,8 @@ function customCarouselCtrl($scope, $animate, $filter) {
         if (!newVal) return;
         $scope.slides = []; //reset the slide counter
         $scope.myInterval = ($filter('intervalFilter')($scope.user.CustomFields, 'interval') * 1000) || 5000;
-        $scope.slides = $scope.slides.concat($filter('carouselFilter')($scope.user.CustomFields, 'CemproCarouselImage'));
-        $scope.slides[0].active = true;
+        $scope.slides = $scope.slides.concat($filter('carouselFilter')($scope.user.CustomFields, 'VerizonCarouselImage'));
+        if ($scope.slides) { $scope.slides[0].active = true; }
     });
 }
 

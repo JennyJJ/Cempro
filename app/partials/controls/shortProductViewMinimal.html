@@ -13,22 +13,20 @@
         <b>{{LineItem.PriceSchedule.PriceBreaks[0].Price | currency}}</b>
     </p>
     <div class="product-id" ng-bind-html="LineItem.Product.ExternalID"></div>
-        <div class="view-form-icon" ng-show="allowAddToOrderInProductList && !StaticSpecGroups.Qualities.Specs.DownloadOnly">
-            <div class="row">
-                <productlistaddtocart ng-show="!actionMessage"></productlistaddtocart>
-                <div class="view-response-message alert-info text-center" alert-show="actionMessage">
-                    {{actionMessage | r | xlat}}
-                </div>
+    <div class="view-form-icon" ng-show="allowAddToOrderInProductList && !StaticSpecGroups.Qualities.Specs.DownloadOnly">
+        <div class="row">
+            <productlistaddtocart ng-show="!actionMessage"></productlistaddtocart>
+            <div class="view-response-message alert-info text-center" alert-show="actionMessage">
+                {{actionMessage | r | xlat}}
             </div>
         </div>
-        <div class="view-form-icon" style="margin-bottom: -15px;" ng-show="!allowAddToOrderInProductList || StaticSpecGroups.Qualities.Specs.DownloadOnly">
-            <div class="row view-product">
-                <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Details' | r) | xlat}}</a>
-            </div>
+    </div>
+    <div class="view-form-icon" style="margin-bottom: -15px;" ng-show="!allowAddToOrderInProductList || StaticSpecGroups.Qualities.Specs.DownloadOnly">
+        <div class="row view-product">
+            <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Details' | r) | xlat}}</a>
         </div>
-    <!--[if !IE 9]>-->
+    </div>
     <ul class="product-list-qualities-grid" ng-show="StaticSpecGroups.Qualities">
         <li ng-repeat="(Specs, Value) in StaticSpecGroups.Qualities.Specs" compile="Value.Value"></li>
     </ul>
-    <!--<![endif]-->
 </div>
